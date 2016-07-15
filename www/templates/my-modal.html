@@ -1,0 +1,11 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h3 style="float:left;" ng-click="closeModal()"><</h3>
+    <h1 class="title" style="text-align: center;">{{selectedBeacon.info.title}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <iframe class="superfill"
+            id="iframeId"
+            ng-src="{{trustSrc(selectedBeacon.info.url)}}"></iframe>
+  </ion-content>
+</ion-modal-view>

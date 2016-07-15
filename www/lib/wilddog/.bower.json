@@ -1,0 +1,33 @@
+{
+  "name": "wilddog",
+  "version": "0.6.4",
+  "homepage": "https://github.com/WildDogTeam/wilddog-bower",
+  "authors": [
+    "Wilddog"
+  ],
+  "description": "wilddog sdk for bower",
+  "main": "wilddog.js",
+  "keywords": [
+    "wilddog",
+    "websocket",
+    "realtime"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.6.4",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.6.4",
+    "commit": "32d8c3388d8afe107fb001fc12cff5b0503517c0"
+  },
+  "_source": "https://github.com/WildDogTeam/wilddog-bower.git",
+  "_target": "^0.6.4",
+  "_originalSource": "wilddog",
+  "_direct": true
+}

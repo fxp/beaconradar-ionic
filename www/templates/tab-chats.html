@@ -1,0 +1,16 @@
+<ion-view hide-nav-bar="true">
+  <ion-content overflow-scroll="true">
+    <div ng-hide="readyToShow" class="loadingAnim" ng-click="reloadPage()"></div>
+    <!--<iframe ng-show="readyToShow"-->
+    <!--class="superfill"-->
+    <!--ng-src="{{trustSrc(homepage)}}"-->
+    <!--onload="uploadDone()"></iframe>-->
+
+    <iframe ng-if="homepage"
+            class="superfill"
+            ng-src="{{trustSrc(homepage)}}"
+            onload="uploadDone()">
+    </iframe>
+
+  </ion-content>
+</ion-view>

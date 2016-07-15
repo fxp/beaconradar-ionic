@@ -1,0 +1,41 @@
+<ion-view hide-nav-bar="true">
+  <ion-content>
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div ng-if="'mode0' === mode">
+      <h3 style="text-align: center;margin:20px">刷新中</h3>
+    </div>
+
+    <div ng-if="'mode1' === mode">
+      <h3 style="text-align: center;margin:20px">附近没有店铺,下拉刷新</h3>
+      <iframe class="superfill"
+              ng-src="{{trustSrc(homepage)}}">
+      </iframe>
+      <!--<div class="loadingAnim"></div>-->
+    </div>
+
+    <div ng-if="'mode2' === mode">
+      <h3 style="text-align: center;margin:20px">{{title}}</h3>
+      <iframe class="superfill"
+              ng-src="{{trustSrc(pageUrl)}}">
+      </iframe>
+    </div>
+
+    <div ng-if="'mode3' === mode">
+      <div class="list card" id="cloudTabDefaultPage-card21"
+           ng-repeat="beacon in lastestBeacons"
+           ng-click="openModal(beacon)">
+        <ion-item id="cloudTabDefaultPage-list-item1">
+          <h2>{{beacon.info.title}}</h2>
+        </ion-item>
+        <div class="item item-body " id="cloudTabDefaultPage-list-item-container1">
+          <pre>{{beacon.info.url}}</pre>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

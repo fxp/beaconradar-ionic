@@ -1,0 +1,21 @@
+/* Empty. Add your own CSS if you like */
+.superfill {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loadingAnim {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background: url(../img/loading.gif) no-repeat center center;
+}
