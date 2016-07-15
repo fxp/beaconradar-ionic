@@ -1,6 +1,6 @@
 angular.module('starter.services', ['ionic'])
 
-  .factory('Beacons', function ($rootScope, $cordovaBeacon, $cordovaGeolocation, $ionicPlatform) {
+  .factory('Beacons', function ($rootScope, $cordovaBeacon, $cordovaGeolocation, $ionicPlatform, $ionicPopup) {
     var IS_DEV_INBROWSER = (ionic.Platform.platform() && ionic.Platform.platforms && ionic.Platform.platforms[0] == "browser");
     var service = {
       ready: false
@@ -18,8 +18,16 @@ angular.module('starter.services', ['ionic'])
 
       $cordovaBeacon.isBluetoothEnabled()
         .then(function (ret) {
-          if(!ret){
-            bluetoothSerial.showBluetoothSettings();
+          if (!ret) {
+            var alertPopup = $ionicPopup.alert({
+              title: '请打开蓝牙获取场景信息'
+            });
+
+            alertPopup.then(function (res) {
+              console.log('Thank you for not eating my delicious ice cream cone');
+              bluetoothSerial.showBluetoothSettings();
+            });
+
             //
             // $cordovaBeacon.enableBluetooth()
             //   .then(function(){
@@ -27,7 +35,6 @@ angular.module('starter.services', ['ionic'])
             //   })
           }
         })
-
 
 
       service.requestAlwaysAuthorization = function () {
